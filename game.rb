@@ -74,7 +74,7 @@ class Game
         letters = [*"a".."z",*"A".."Z"]
         valid_numbers = [*"0".."3"]   
 
-        return false if guess.length != 3 || guess == @previous_guess || board[guess].face_down == false
+        return false if guess.length != 3 || guess == @previous_guess 
 
         guess_array = guess.split(",")
 
@@ -83,6 +83,8 @@ class Game
                 return false
             end
         end
+
+        return false if board[guess].face_down == false
 
         true
     end
